@@ -1,2 +1,3 @@
 # APIBOT
-This repository is responsible for store timeline of project
+API desenvolvida para ser consumida pelo chatbot realizando consulta na base de dados e executando automações
+
