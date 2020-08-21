@@ -7,11 +7,11 @@ module.exports = {
     savebat(process, resource) {
         return promisse = new Promise((resolve, rejects) => {
             try {
-                const contentString = "cd C:/Program Files/Blue Prism Limited/Blue Prism Automate/"
+                const contentString = "cd C:/Program Files/Blue Prism Limited/Blue Prism Automate/ \n"
                     + `start AutomateC.exe /run ${process} /resource ${resource} /user admin Ee!41526388 /dbconname Blueprism`;
-                const path = `G:/CHATBOT_BIA/API_Ajustado/Files_Executions/${process}.bat`;
-                const PathRelative = `Files_Executions/${process}.bat`;
-                fs.writeFileSync(path, contentString)
+                const path = `C:/Users/jonas/Desktop/API_Ajustado_V0.2/Files_Executions/${process}.bat`;
+                const PathRelative = `/Files_Executions/${process}.bat`;
+                fs.writeFileSync(PathRelative, contentString)
                 resolve(PathRelative);
             }
             catch

@@ -5,8 +5,6 @@
 //////////////////////////////////////////////////////
 //CABEÇALHO
 require('dotenv').config();
-const SaveFile = require('./SaveFile')
-const execution = require('./SQL/ExecuteProcess')
 const express = require('express');
 const app = express();
 var bodyParser = require('body-parser');
@@ -18,12 +16,14 @@ app.use(function (req, res, next) {
    res.header('Access-Control-Allow-Methods', 'POST, GET');
    next();
 });
-const LOG = require('./routers/LOG');
+
 const GETPROCESSBYNAME = require('./routers/GETPROCESSBYNAME');
 const EXECUTIONBYDATE = require('./routers/EXECUTIONBYDATE');
+const EXECUTEPROCESS = require('./routers/EXECUTEPROCESS');
 const GETPROCESS = require('./routers/GETPROCESS');
 const GETUSER = require('./routers/GETUSER');
 const MAIN = require('./routers/MAIN');
+const LOG = require('./routers/LOG');
 const port = process.env.PORT; //porta padrão
 const router = express.Router();
 
@@ -43,20 +43,7 @@ app.post('/log', LOG)
 
 
 //Create File .BAT
-router.post('/execution', (req, res) => {
-   const process = req.body.process;
-   const resource = req.body.resource;
-   const schedule = req.body.schedule;
-   if (schedule != "" && process != "")
-      SaveFile.savebat(process, resource)
-         .then(resolve => {
-            execution.ExecutionProcess(resolve)
-               .then(resolveExecution => res.json(resolveExecution))
-               .catch(rejectExecution => res.json(rejectExecution))
-
-         })
-         .catch(rejects => res.json(rejects))
-})
+app.post('/execution', EXECUTEPROCESS)
 
 //inicia o servidor
 app.listen(port);

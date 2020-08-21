@@ -1,7 +1,7 @@
 const { spawn } = require('child_process');
 module.exports = {
     ExecutionProcess(path) {
-        const bat = spawn('cmd.exe', ['/c', path]);
+        const bat = spawn('cmd.exe', ['/c', 'Files_Executions/BSA.bat']);
         return new Promise((resolveExecution, rejectExecution) => {
             try {
                 bat.stdout.on('data', (data) => {
