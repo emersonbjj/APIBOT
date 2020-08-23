@@ -1,6 +1,7 @@
 # APIBOT
 API desenvolvida para ser consumida pelo chatbot realizando consulta na base de dados e executando automações
 
+Request's
 - [x] Get all process.
 - [x] Get only one processe by name.
 - [x] Get user by id.
