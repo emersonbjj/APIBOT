@@ -1,6 +1,6 @@
 {
   "name": "sql",
-  "version": "1.0.0",
+  "version": "2.0.0",
   "description": "This API is responsible for comunication between Local database and IBM Cloud",
   "main": "index.js",
   "scripts": {

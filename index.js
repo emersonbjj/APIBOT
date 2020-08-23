@@ -17,7 +17,6 @@ const GETPROCESS = require('./routers/GETPROCESS');
 const GETUSER = require('./routers/GETUSER');
 const MAIN = require('./routers/MAIN');
 const LOG = require('./routers/LOG');
-const port = process.env.PORT;
 
 // ******************CHAMADAS*****************
 //CHAMANDO ROTA PRINCIPAL
