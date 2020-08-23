@@ -1,5 +1,5 @@
 {
-  "name": "sql",
+  "name": "api",
   "version": "2.0.0",
   "description": "This API is responsible for comunication between Local database and IBM Cloud",
   "main": "index.js",
@@ -16,5 +16,20 @@
     "moment": "^2.27.0",
     "mssql": "^6.2.1",
     "npm-git-install": "^0.3.0"
-  }
+  },
+  "devDependencies": {},
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/emersonbjj/APIBOT.git"
+  },
+  "keywords": [
+    "API",
+    "BOT",
+    "BIA",
+    "REST"
+  ],
+  "bugs": {
+    "url": "https://github.com/emersonbjj/APIBOT/issues"
+  },
+  "homepage": "https://github.com/emersonbjj/APIBOT#readme"
 }
