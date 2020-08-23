@@ -1,7 +1,9 @@
 var express = require('express'),
     router = express.Router();
 const sql = require('mssql');
-const Config = require('../SQL/Config')
+const Config = require('../SQL/Config');
+const Querys = require('../SQL/Querys');
+const { json } = require('body-parser');
 
 sql.connect(Config.module)
     .then(conn => global.conn = conn)
@@ -17,9 +19,11 @@ function SQLQuery(sqlQry, res) {
         .catch(err => res.json(err));
 }
 router
-.get('/log/:id?', (req, res) => {
-    const id = parseInt(req.params.id);
-    SQLQuery(`SELECT * FROM [LOGBOT].[dbo].[Logon] WHERE [id] = '${id}'`, res);
- 
- })
- module.exports=router;
+    .get('/log/:id?', (req, res) => {
+        const id = parseInt(req.params.id);
+        Querys.GETUSERBYID(id)
+            .then(resolve => SQLQuery(resolve,res))
+            .catch(reject => json.res({message: reject}));
+
+    })
+module.exports = router;

@@ -18,10 +18,10 @@ function SQLQuery(sqlQry, res) {
         .catch(err => res.json(err));
 }
 router
-.get('/processos/:name?', (req, res) => {
-    let filter = '';
-    if (req.params.name)
-       filter = "'%" + (req.params.name) + "%'";
-    SQLQuery(Querys.SWProcess + filter, res);
- })
- module.exports=router;
+    .get('/processos/:name?', (req, res) => {
+        let filter = '';
+        if (req.params.name)
+            filter = "'%" + (req.params.name) + "%'";
+        SQLQuery(Querys.SWProcess + filter, res);
+    })
+module.exports = router;

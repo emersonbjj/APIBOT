@@ -27,7 +27,10 @@ router
     const dateLocal = new Date(now.getTime() - offsetMs);
     const str = dateLocal.toISOString().slice(0, 19).replace(/-/g, "/").replace("T", " ");
     console.log(str);
- 
-    SQLQuery(`INSERT INTO [LOGBOT].[dbo].[LOGBOT](id, nome, setor, time) VALUES(${id},'${Nome}','${Setor}','${str}')`, res);
+    
+    
+    Querys.LOG(id,Nome,Setor,str)
+        .then(resolve => SQLQuery(resolve, res.json({message: "LOG inserido"})))
+        .catch(reject => res.json({message: reject}))
  })
  module.exports=router;

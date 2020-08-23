@@ -1,8 +1,8 @@
 var express = require('express'),
-    router = express.Router();
-    const Querys = require('../SQL/Querys');
-    const sql = require('mssql');
-    const Config = require('../SQL/Config')
+   router = express.Router();
+const Querys = require('../SQL/Querys');
+const sql = require('mssql');
+const Config = require('../SQL/Config')
 
 sql.connect(Config.module)
    .then(conn => global.conn = conn)
@@ -18,8 +18,8 @@ function SQLQuery(sqlQry, res) {
       .catch(err => res.json(err));
 }
 router
-.get('/processos', (req, res) => {
-    SQLQuery(Querys.SProcess, res);
-});
+   .get('/processos', (req, res) => {
+      SQLQuery(Querys.SProcess, res);
+   });
 
 module.exports = router;

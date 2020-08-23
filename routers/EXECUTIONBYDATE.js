@@ -2,6 +2,7 @@ var express = require('express'),
     router = express.Router();
 const sql = require('mssql');
 const Config = require('../SQL/Config')
+const Querys = require('../SQL/Querys');
 
 sql.connect(Config.module)
     .then(conn => global.conn = conn)
@@ -20,9 +21,10 @@ router.
     get('/processos/execution/:dt?:setor?', (req, res) => {
         const dt = req.body.dt;
         const setor = req.body.setor;
-        console.log(dt, setor);
         if (req.body.dt || req.body.setor)
-            SQLQuery(`SELECT P.name As 'Process',FORMAT(DATEADD(hour,-3,[startdatetime]),'HH:mm:ss tt dd/MM/yyyy') AS 'Time Start',FORMAT(DATEADD(hour,-3,[enddatetime]),'HH:mm:ss tt dd/MM/yyyy')AS 'Time End',ST.description AS 'Status' FROM [BluePrism].[dbo].[BPASession] AS S INNER JOIN BPAProcess AS P ON S.processid = P.processid INNER JOIN BPAStatus AS ST ON S.statusid = ST.statusid WHERE FORMAT(DATEADD(hour,-3,[startdatetime]),'dd/MM/yyyy') = '${dt}' AND P.name like '%${setor}%'`, res);
+            Querys.EXECUTIONBYDATE(dt, setor)
+                .then(resolve => SQLQuery(resolve, res))
+                .catch(reject => res.json({ message: reject }))
     })
 
 module.exports = router;

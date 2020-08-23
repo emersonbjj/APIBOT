@@ -4,6 +4,7 @@ module.exports = {
         const bat = spawn('cmd.exe', ['/c', path]);
         return new Promise((resolveExecution, rejectExecution) => {
             try {
+                var codefinal
                 bat.stdout.on('data', (data) => {
                     console.log(data.toString());
                 });
@@ -12,10 +13,14 @@ module.exports = {
                 });
                 bat.on('exit', (code) => {
                     console.log(`Child exited with code ${code}`);
+                   codefinal = code;
                 });
-                resolveExecution({ message: "Sucess in Execution" });
+                if(codefinal != 1){
+                    resolveExecution({ message: "Sucesso!" });
+                }else{
+                    rejectExecution({ message: "Erro ao executar processo" })
+                }
             } catch{
-               
                 rejectExecution({ message: "Deu ruim" })
             }
         });
