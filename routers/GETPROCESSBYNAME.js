@@ -2,7 +2,8 @@ var express = require('express'),
     router = express.Router();
 const sql = require('mssql');
 const Querys = require('../SQL/Querys');
-const Config = require('../SQL/Config')
+const Config = require('../SQL/Config');
+const { connect } = require('./EXECUTIONBYDATE');
 
 sql.connect(Config.module)
     .then(conn => global.conn = conn)

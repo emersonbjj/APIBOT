@@ -19,9 +19,8 @@ function SQLQuery(sqlQry, res) {
 }
 router.
     get('/processos/execution/:dt?:setor?', (req, res) => {
-        const dt = req.body.dt;
-        const setor = req.body.setor;
-        if (req.body.dt || req.body.setor)
+        const dt = req.query.dt;
+        const setor = req.query.setor;
             Querys.EXECUTIONBYDATE(dt, setor)
                 .then(resolve => SQLQuery(resolve, res))
                 .catch(reject => res.json({ message: reject }))

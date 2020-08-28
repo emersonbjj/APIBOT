@@ -14,13 +14,14 @@ function GETUSERBYID(id) {
 function EXECUTIONBYDATE(dt, setor) {
     return new Promise((resolve, reject) => {
         try {
-            const EXECUTIONBYDATE = `SELECT P.name As 'Process',FORMAT(DATEADD(hour,-3,[startdatetime]),'HH:mm:ss tt dd/MM/yyyy') AS 'Time Start'
-            ,FORMAT(DATEADD(hour,-3,[enddatetime]),'HH:mm:ss tt dd/MM/yyyy')AS 'Time End'
+            const EXECUTIONBYDATE = `SELECT P.name As 'Process',FORMAT(DATEADD(hour,-3,[startdatetime]),'HH:mm:ss tt dd/MM/yyyy') AS 'Start'
+            ,FORMAT(DATEADD(hour,-3,[enddatetime]),'HH:mm:ss tt dd/MM/yyyy')AS 'End'
             ,ST.description AS 'Status' FROM [BluePrism].[dbo].[BPASession] AS S
              INNER JOIN BPAProcess AS P ON S.processid = P.processid 
              INNER JOIN BPAStatus AS ST ON S.statusid = ST.statusid 
              WHERE FORMAT(DATEADD(hour,-3,[startdatetime]),'dd/MM/yyyy') = '${dt}' AND P.name like '%${setor}%'`
-            resolve(EXECUTIONBYDATE)
+            console.log(EXECUTIONBYDATE);
+             resolve(EXECUTIONBYDATE)
         }
         catch{
             reject("Algo deu erro")
