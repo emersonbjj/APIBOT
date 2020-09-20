@@ -1,7 +1,5 @@
 //////////////////////////////////////////////////////
-//                                                  //
 //      API CHAT BOT  - Emerson Ferreira            //
-//                                                  //
 //////////////////////////////////////////////////////
 //CABEÇALHO
 const express = require('express');
@@ -17,9 +15,9 @@ const GETPROCESS = require('./routers/GETPROCESS');
 const GETUSER = require('./routers/GETUSER');
 const MAIN = require('./routers/MAIN');
 const LOG = require('./routers/LOG');
-const port = process.env.PORT
+const PORTSERV = process.env.PORT
 
-// ******************CHAMADAS*****************
+// ******************CHAMADAS******************
 //CHAMANDO ROTA PRINCIPAL
 app.use('/', MAIN);
 //GET ALL PROCESS
@@ -30,10 +28,10 @@ app.get('/processos/execution/:dt?:setor?', EXECUTIONBYDATE);
 app.get('/log/:id?', GETUSER)
 //GET PROCESS BY NAME
 app.get('/processos/:name?',GETPROCESSBYNAME)
-//Insert LOG IN BASE
+//INSERT LOG IN BASE
 app.post('/log', LOG)
-//Create File .BAT AND Execute process
+//CREATE FILE .BAT AND EXECUTE PROCESS
 app.post('/execution', EXECUTEPROCESS)
-//inicia o servidor
-app.listen(port);
+//INICIAR O SERVIDOR
+app.listen(PORTSERV);
 console.log('API funcionando!');

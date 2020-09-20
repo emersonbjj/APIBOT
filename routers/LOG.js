@@ -3,7 +3,7 @@ var express = require('express'),
 const sql = require('mssql');
 const Querys = require('../SQL/Querys');
 const Config = require('../SQL/Config')
-
+//Conecta ao banco de Dados.
 sql.connect(Config.module)
     .then(conn => global.conn = conn)
     .catch(err => console.log(err));

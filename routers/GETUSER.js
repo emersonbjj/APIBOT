@@ -4,7 +4,7 @@ const sql = require('mssql');
 const Config = require('../SQL/Config');
 const Querys = require('../SQL/Querys');
 const { json } = require('body-parser');
-
+//Conecta ao banco de Dados.
 sql.connect(Config.module)
     .then(conn => global.conn = conn)
     .catch(err => console.log(err));

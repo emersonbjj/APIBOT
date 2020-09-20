@@ -5,9 +5,9 @@ const SaveFile = require('../SaveFile')
 const execution = require('../SQL/ExecuteProcess')
 router
    .post('/execution', (req, res) => {
-      const processName = req.body.process;
-      const resource = req.body.resource;
-      const Username = process.env.USERNAME;
+      const processName = req.query.process;
+      const resource = req.query.resource;
+      const Username = process.env.USERNAMEBP;
       const Userpassword = process.env.USERPASSWORD;
       const dbconname = process.env.DBCONNAME;
          SaveFile.savebat(processName, resource,Username,Userpassword,dbconname)

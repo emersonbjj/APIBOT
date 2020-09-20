@@ -3,11 +3,11 @@ var express = require('express'),
 const Querys = require('../SQL/Querys');
 const sql = require('mssql');
 const Config = require('../SQL/Config')
-
+//Conecta ao banco de Dados.
 sql.connect(Config.module)
    .then(conn => global.conn = conn)
    .catch(err => console.log(err));
-//Executa Query
+//Executa Query.
 function SQLQuery(sqlQry, res) {
    global.conn.request()
       .query(sqlQry)
