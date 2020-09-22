@@ -25,7 +25,7 @@ API desenvolvida para ser consumida pelo chatbot realizando consulta na base de 
 - Descriptions: Fica a nossa pagina principal, não apresenta nenhum conteudo.
 
 ####  '/log', 
--Descriptions: Responsável pela inserção de logs no banco de dados 
+- Descriptions: Responsável pela inserção de logs no banco de dados 
 - Method: POST,
 - Request: Body,
 - Param: 
@@ -52,9 +52,9 @@ Name: Resource,  Type: String.
 }
 
  #### '/processos/execution/', 
-Description: Responsável por listar execuções de processos por data
-Method: GET,
-Request: Query,
-Param: {
+- Description: Responsável por listar execuções de processos por data
+- Method: GET,
+- Request: Query,
+- Param: {
 Name: Dt,   Type: String.
 Name: Setor,Type: String.
