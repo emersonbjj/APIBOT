@@ -11,24 +11,24 @@ sua função é expor registros do banco de dados da BluPrism On Premises que fi
 
 
 ## Requests
-- [ X ] Get all process.
-- [ X ] Get only one processe by name.
-- [ X ] Get user by id.
-- [ X ] Post Insert user log.
-- [ X ] Get execution by date.
-- [ X ] Get main.
-- [ X ] Post Execute Process.
+- [X] Get all process.
+- [X] Get only one processe by name.
+- [X] Get user by id.
+- [X] Post Insert user log.
+- [X] Get execution by date.
+- [X] Get main.
+- [X] Post Execute Process.
 
 
 ## Pendências
-- [ X ] Refatorar CODE.
-- [ - ] Notificar em caso de falha de schedule
-- [ - ] Padronizar todos os request com consulta.
-- [ - ] Adicionar validações ao Execute Process sobre a execução.
+- [X] Refatorar CODE.
+- [-] Notificar em caso de falha de schedule
+- [-] Padronizar todos os request com consulta.
+- [-] Adicionar validações ao Execute Process sobre a execução.
 
 ## Rotas
 
- #### Rota: '/', 
+#### Rota: '/', 
 - Descriptions: Fica a nossa pagina principal, não apresenta nenhum conteudo.
 -Exemplo de Requisição:
 ``
@@ -60,9 +60,7 @@ $.ajax(settings).done(function (response) {
   console.log(response);
 });
 ```
-
-
- #### Rota: '/processos'
+#### Rota: '/processos'
 - Descriptions:Responsável por listar todos os processo existentes.
 - Method:GET,
 - Request: Nothing,
@@ -81,9 +79,7 @@ $.ajax(settings).done(function (response) {
   console.log(response);
 });
 ```
-
-
- #### Rota: '/execution'
+#### Rota: '/execution'
 - Descriptions: Responsável pela execução de um processo.
 - Method: POST,
 - Request: Query,
@@ -108,9 +104,7 @@ $.ajax(settings).done(function (response) {
   console.log(response);
 });
 ```
-
-
- #### Rota: '/processos/execution/', 
+#### Rota: '/processos/execution/', 
 - Description: Responsável por listar execuções de processos por data
 - Method: GET,
 - Request: Query,
@@ -133,8 +127,6 @@ $.ajax(settings).done(function (response) {
 });
 ```
 
-
-
 ## Tecnologias
-- [ X ] NODEJS.
-- [ X ] MSSQL.
+* [X] NODEJS.
+* [X] MSSQL.
