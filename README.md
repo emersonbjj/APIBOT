@@ -29,32 +29,22 @@ API desenvolvida para ser consumida pelo chatbot realizando consulta na base de 
 - Method: POST,
 - Request: Body,
 - Param: 
-{
-Name: ID,   Type: Integer.
-Name: Nome, Type: String.
-Name: Setor,Type: String.
-Name: Str,  Type: Date.
-}
+`{Name: ID,   Type: Integer.Name: Nome, Type: String.Name: Setor,Type: String.Name: Str, Type: Date.}`
 
  ####  '/processos'
 - Descriptions:Responsável por listar todos os processo existentes.
 - Method:GET,
 - Request: Nothing,
-- Param:{Nothing}
+- Param:`{Nothing}`
 
  ####  '/execution', 
 - Descriptions: Responsável pela execução de um processo.
 - Method: POST,
 - Request: Query,
-- Param: {
-Name: Process,   Type: String.
-Name: Resource,  Type: String.
-}
+- Param: `{Name: Process, Type: String. Name: Resource,  Type:String.}`
 
  #### '/processos/execution/', 
 - Description: Responsável por listar execuções de processos por data
 - Method: GET,
 - Request: Query,
-- Param: {
-Name: Dt,   Type: String.
-Name: Setor,Type: String.
+- Param: `{Name: Dt, Type: String. Name: Setor,Type: String.}`
