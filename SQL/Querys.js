@@ -4,13 +4,14 @@ function GETUSERBYID(id) {
     return new Promise((resolve, reject) => {
         try {
             const USER = `SELECT * FROM [BOT].[dbo].[Logon] WHERE [id] = '${id}'`
+            console.log(`[Database] Consulta [GETUSERBYID] recebeu os seguintes parâmetros: ${id}`)
             resolve(USER)
-        }
-        catch{
+        } catch {
             reject("Algo deu erro")
         }
     });
 }
+
 function EXECUTIONBYDATE(dt, setor) {
     return new Promise((resolve, reject) => {
         try {
@@ -20,21 +21,21 @@ function EXECUTIONBYDATE(dt, setor) {
              INNER JOIN BPAProcess AS P ON S.processid = P.processid 
              INNER JOIN BPAStatus AS ST ON S.statusid = ST.statusid 
              WHERE FORMAT(DATEADD(hour,-3,[startdatetime]),'dd/MM/yyyy') = '${dt}' AND P.name like '%${setor}%'`
-            console.log(EXECUTIONBYDATE);
-             resolve(EXECUTIONBYDATE)
-        }
-        catch{
+            console.log(`[Database] Consulta [EXECUTIONBYDATE] recebeu os seguintes parâmetros: ${dt},${setor}`);
+            resolve(EXECUTIONBYDATE)
+        } catch {
             reject("Algo deu erro")
         }
     });
 }
+
 function LOG(id, Nome, Setor, str) {
     return new Promise((resolve, reject) => {
         try {
             const LOG = `INSERT INTO [BOT].[dbo].[LOGBOT](id, nome, setor, time) VALUES(${id},'${Nome}','${Setor}','${str}')`
+            console.log(`[Database] Insert [LOG] recebeu os seguintes parâmetros: ${id},${Nome},${Setor},${str}`)
             resolve(LOG)
-        }
-        catch{
+        } catch {
             reject("Algo deu erro")
         }
     });

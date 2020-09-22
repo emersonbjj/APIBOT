@@ -11,7 +11,7 @@ module.exports = {
                 const contentString = "cd C:/Program Files/Blue Prism Limited/Blue Prism Automate/ \n"
                     + `start AutomateC.exe /run ${processName} /resource ${resource} /user ${Username} ${Userpassword} /dbconname ${dbconname}`;
                 const PathRelative = `C:/Users/jonas/Desktop/API_Ajustado_V0.2/Files_Executions/${processName}.bat`;
-                console.log(PathRelative)
+                console.log(`[Process] O arquivo foi gravado com esses parâmetros: Process name: ${processName}, Resource name: ${resource}`,)
                 fs.writeFileSync(PathRelative, contentString)
                 resolve(PathRelative);
             }

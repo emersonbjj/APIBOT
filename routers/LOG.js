@@ -1,5 +1,4 @@
-var express = require('express'),
-    router = express.Router();
+var express = require('express'), router = express.Router();
 const sql = require('mssql');
 const Querys = require('../SQL/Querys');
 const Config = require('../SQL/Config')
@@ -25,9 +24,7 @@ router
     const now = new Date();
     const offsetMs = now.getTimezoneOffset() * 60 * 1000;
     const dateLocal = new Date(now.getTime() - offsetMs);
-    const str = dateLocal.toISOString().slice(0, 19).replace(/-/g, "/").replace("T", " ");
-    console.log(str);
-    
+    const str = dateLocal.toISOString().slice(0, 19).replace(/-/g, "/").replace("T", " ");    
     
     Querys.LOG(id,Nome,Setor,str)
         .then(resolve => SQLQuery(resolve, res.json({message: "LOG inserido"})))

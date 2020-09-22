@@ -1,25 +1,11 @@
 var express = require('express'),
    router = express.Router();
 const Querys = require('../SQL/Querys');
-const sql = require('mssql');
-const Config = require('../SQL/Config')
-//Conecta ao banco de Dados.
-sql.connect(Config.module)
-   .then(conn => global.conn = conn)
-   .catch(err => console.log(err));
-//Executa Query.
-function SQLQuery(sqlQry, res) {
-   global.conn.request()
-      .query(sqlQry)
-      .then(result => {
-         res.json(result.recordset)
-         console.log(result.recordset)
-      })
-      .catch(err => res.json(err));
-}
+const ExecuteQuery = require('../SQL/Execute Query')
+
 router
    .get('/processos', (req, res) => {
-      SQLQuery(Querys.SProcess, res);
+      ExecuteQuery(Querys.SProcess, res);
    });
 
 module.exports = router;
