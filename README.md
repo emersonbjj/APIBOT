@@ -1,7 +1,7 @@
 # APIBOT
 API desenvolvida para ser consumida pelo chatbot realizando consulta na base de dados e executando automações
 
-## Table of contents
+## Sumário
 * [Requests](#Requests)
 * [Rotas](#Rotas)
 
@@ -21,10 +21,10 @@ API desenvolvida para ser consumida pelo chatbot realizando consulta na base de 
 
 ## Rotas
 
-- #### [X] '/', 
+ ####  '/', 
 - Descriptions: Fica a nossa pagina principal, não apresenta nenhum conteudo.
 
-- #### [X] '/log', 
+####  '/log', 
 -Descriptions: Responsável pela inserção de logs no banco de dados 
 - Method: POST,
 - Request: Body,
@@ -36,13 +36,13 @@ Name: Setor,Type: String.
 Name: Str,  Type: Date.
 }
 
-- #### [X] '/processos'
+ ####  '/processos'
 - Descriptions:Responsável por listar todos os processo existentes.
 - Method:GET,
 - Request: Nothing,
 - Param:{Nothing}
 
-- #### [X] '/execution', 
+ ####  '/execution', 
 - Descriptions: Responsável pela execução de um processo.
 - Method: POST,
 - Request: Query,
@@ -51,7 +51,7 @@ Name: Process,   Type: String.
 Name: Resource,  Type: String.
 }
 
-- #### [X] '/processos/execution/', 
+ #### '/processos/execution/', 
 Description: Responsável por listar execuções de processos por data
 Method: GET,
 Request: Query,
