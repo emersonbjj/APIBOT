@@ -17,13 +17,18 @@ Request's
 ## Rotas
 
 - [X] '/', 
-Descriptions: Fica a nossa pagina principal, não apresenta nenhum conteudo.
+# Descriptions: 
+Fica a nossa pagina principal, não apresenta nenhum conteudo.
 
 - [X] '/log', 
-Descriptions: Responsável pela inserção de logs no banco de dados 
-Method: POST,
-Request: Body,
-Param: {
+# Descriptions: 
+Responsável pela inserção de logs no banco de dados 
+# Method:
+POST,
+# Request:
+Body,
+# Param: 
+{
 Name: ID,   Type: Integer.
 Name: Nome, Type: String.
 Name: Setor,Type: String.
@@ -31,14 +36,20 @@ Name: Str,  Type: Date.
 }
 
 - [X] '/processos'
-Descriptions: Responsável por listar todos os processo existentes.
-Method: GET,
-Request: Nothing,
-Param: {Nothing}
+# Descriptions:
+Responsável por listar todos os processo existentes.
+# Method:
+GET,
+# Request: 
+Nothing,
+# Param:
+{Nothing}
 
 - [X] '/execution', 
-Descriptions: Responsável pela execução de um processo.
-Method: POST,
+# Descriptions:
+Responsável pela execução de um processo.
+# Method:
+POST,
 Request: Query,
 Param: {
 Name: Process,   Type: String.
