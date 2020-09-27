@@ -21,7 +21,7 @@ module.exports = {
                     rejectExecution({ message: "Erro ao executar processo" })
                 }
             } catch{
-                rejectExecution({ message: "Deu ruim" })
+                rejectExecution({ message: "Erro ao executar processo" })
             }
         });
     }

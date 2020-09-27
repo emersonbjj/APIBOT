@@ -1,0 +1,2 @@
+## Get execution process by date
+GET http://localhost:4200/processos/execution?dt=20%2F09%2F2020&setor=TESTE

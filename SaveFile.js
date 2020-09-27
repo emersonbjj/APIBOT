@@ -17,7 +17,7 @@ module.exports = {
             }
             catch
             {
-                rejects(new error({messege:"Failed"}));
+                rejects(new error({message:"Failed"}));
             }
         });
 

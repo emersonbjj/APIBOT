@@ -1,0 +1,1 @@
+GET http://localhost:4200/processos/execution?dt=18%2F08%2F2020&setor=RPA

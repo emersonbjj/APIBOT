@@ -4,9 +4,11 @@ const Querys = require('../SQL/Querys');
 const ExecuteQuery = require('../SQL/Execute Query')
 router
     .get('/processos/:name?', (req, res) => {
-        let filter = '';
-        if (req.params.name)
-            filter = "'%" + (req.params.name) + "%'";
-        ExecuteQuery(Querys.SWProcess + filter, res);
+        const name = req.params.name
+        Querys.SWProcess(name)
+            .then(resolve => ExecuteQuery(resolve, res))
+            .catch(reject => res.json({
+                message: reject
+            }))
     })
 module.exports = router;

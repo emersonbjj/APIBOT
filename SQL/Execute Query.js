@@ -11,7 +11,7 @@ function SQLQuery(sqlQry, res) {
         .then(result => {
             console.log("[Database] Query está sendo executada")
             res.json(result.recordset)
-            console.log("[Resultado]: "+ result.recordset)
+            console.log("[Resultado]: " + result.recordset)
             console.log("[Database] Query foi executada com sucesso")
         })
         .catch(err => {

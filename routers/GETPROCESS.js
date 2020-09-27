@@ -5,7 +5,11 @@ const ExecuteQuery = require('../SQL/Execute Query')
 
 router
    .get('/processos', (req, res) => {
-      ExecuteQuery(Querys.SProcess, res);
-   });
+      Querys.SPProcess()
+         .then(resolve => ExecuteQuery(resolve, res))
+         .catch(reject => res.json({
+            message: reject
+         }))
+   })
 
 module.exports = router;

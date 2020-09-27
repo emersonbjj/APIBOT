@@ -40,17 +40,40 @@ function LOG(id, Nome, Setor, str) {
         }
     });
 }
+function SPProcess() {
+    return new Promise((resolve, reject) => {
+        try {
+            const SPProcess = `SELECT [Name] FROM [BluePrism].[dbo].[BPAProcess]`
+            console.log(`[Database] Consulta [LOG] não recebe parâmetros`)
+            resolve(SPProcess)
+        } catch {
+            reject("[Database] Algo deu erro ao realizar a consulta")
+        }
+    });
+}
+
+function SWProcess(Name) {
+    return new Promise((resolve, reject) => {
+        try {
+            const SWProcess = `SELECT [Name] FROM [BluePrism].[dbo].[BPAProcess] WHERE [ProcessType] = 'P' AND [Name] like %${Name}%`
+            console.log(`[Database] Consulta [Process] recebeu os seguintes parâmetros: ${Name}`)
+            resolve(SWProcess)
+        } catch {
+            reject("[Database] Algo deu erro ao realizar a consulta")
+        }
+    });
+}
 
 
 
-const SProcess = 'SELECT [Name] FROM [BluePrism].[dbo].[BPAProcess]';
-const SWProcess = "SELECT [Name] FROM [BluePrism].[dbo].[BPAProcess] WHERE [ProcessType] = 'P' AND [Name] like";
-const ProcessByDate = "SELECT P.name As 'Process',FORMAT (DATEADD(hour,-3,[startdatetime]), 'HH:mm:ss tt dd/MM/yyyy') AS 'Time Start',FORMAT (DATEADD(hour,-3,[enddatetime]), 'HH:mm:ss tt dd/MM/yyyy')AS 'Time End',ST.description AS 'Status' FROM [BluePrism].[dbo].[BPASession] AS S INNER JOIN BPAProcess AS P ON S.processid = P.processid INNER JOIN BPAStatus AS ST ON S.statusid = ST.statusid WHERE FORMAT(DATEADD(hour,-3,[startdatetime]),'dd/MM/yyyy')"
+// const SProcess = 'SELECT [Name] FROM [BluePrism].[dbo].[BPAProcess]';
+// const SWProcess = "SELECT [Name] FROM [BluePrism].[dbo].[BPAProcess] WHERE [ProcessType] = 'P' AND [Name] like";
+// const ProcessByDate = "SELECT P.name As 'Process',FORMAT (DATEADD(hour,-3,[startdatetime]), 'HH:mm:ss tt dd/MM/yyyy') AS 'Time Start',FORMAT (DATEADD(hour,-3,[enddatetime]), 'HH:mm:ss tt dd/MM/yyyy')AS 'Time End',ST.description AS 'Status' FROM [BluePrism].[dbo].[BPASession] AS S INNER JOIN BPAProcess AS P ON S.processid = P.processid INNER JOIN BPAStatus AS ST ON S.statusid = ST.statusid WHERE FORMAT(DATEADD(hour,-3,[startdatetime]),'dd/MM/yyyy')"
 
 //Exporta Querys
-exports.SProcess = SProcess;
+exports.SPProcess = SPProcess;
 exports.SWProcess = SWProcess;
-exports.ProcessByDate = ProcessByDate;
+// exports.ProcessByDate = ProcessByDate;
 exports.GETUSERBYID = GETUSERBYID;
 exports.EXECUTIONBYDATE = EXECUTIONBYDATE;
 exports.LOG = LOG;

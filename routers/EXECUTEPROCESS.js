@@ -17,6 +17,6 @@ router
                   .catch(rejectExecution => res.json(rejectExecution))
 
             })
-            .catch(rejects => res.json({error:"rejects"}))
+            .catch(rejects => res.json({error: rejects}))
    })
 module.exports = router;
