@@ -2,6 +2,11 @@
 API desenvolvida para ser consumida pelo chatbot,
 sua função é expor registros do banco de dados da BluPrism On Premises que fica registrado todos os logs de automações, bem como também é a sua função executar automações aparti de comandos via bat para o software AutomateC.exe.
 
+[![Build Status](https://img.shields.io/badge/API-Est%C3%A1vel-green)]()
+[![Version](https://img.shields.io/badge/Vers%C3%A3o-1.0.1-yellow)]()
+[![MSSQL](https://img.shields.io/badge/MMSQL-2019-blue)]()
+[![Private Mode](https://img.shields.io/badge/Projeto-Private-red)]()
+
 
 ## Sumário
 * [Requests](#Requests)
