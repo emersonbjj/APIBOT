@@ -7,7 +7,7 @@ function GETUSERBYID(id) {
             console.log(`[Database] Consulta [GETUSERBYID] recebeu os seguintes parâmetros: ${id}`)
             resolve(USER)
         } catch {
-            reject("Algo deu erro")
+            reject("[Database] Algo deu erro ao realizar a consulta")
         }
     });
 }
@@ -24,7 +24,7 @@ function EXECUTIONBYDATE(dt, setor) {
             console.log(`[Database] Consulta [EXECUTIONBYDATE] recebeu os seguintes parâmetros: ${dt},${setor}`);
             resolve(EXECUTIONBYDATE)
         } catch {
-            reject("Algo deu erro")
+            reject("[Database] Algo deu erro ao realizar a consulta")
         }
     });
 }
@@ -36,7 +36,7 @@ function LOG(id, Nome, Setor, str) {
             console.log(`[Database] Insert [LOG] recebeu os seguintes parâmetros: ${id},${Nome},${Setor},${str}`)
             resolve(LOG)
         } catch {
-            reject("Algo deu erro")
+            reject("[Database] Algo deu erro ao inserir o log")
         }
     });
 }
@@ -65,15 +65,9 @@ function SWProcess(Name) {
 }
 
 
-
-// const SProcess = 'SELECT [Name] FROM [BluePrism].[dbo].[BPAProcess]';
-// const SWProcess = "SELECT [Name] FROM [BluePrism].[dbo].[BPAProcess] WHERE [ProcessType] = 'P' AND [Name] like";
-// const ProcessByDate = "SELECT P.name As 'Process',FORMAT (DATEADD(hour,-3,[startdatetime]), 'HH:mm:ss tt dd/MM/yyyy') AS 'Time Start',FORMAT (DATEADD(hour,-3,[enddatetime]), 'HH:mm:ss tt dd/MM/yyyy')AS 'Time End',ST.description AS 'Status' FROM [BluePrism].[dbo].[BPASession] AS S INNER JOIN BPAProcess AS P ON S.processid = P.processid INNER JOIN BPAStatus AS ST ON S.statusid = ST.statusid WHERE FORMAT(DATEADD(hour,-3,[startdatetime]),'dd/MM/yyyy')"
-
 //Exporta Querys
 exports.SPProcess = SPProcess;
 exports.SWProcess = SWProcess;
-// exports.ProcessByDate = ProcessByDate;
 exports.GETUSERBYID = GETUSERBYID;
 exports.EXECUTIONBYDATE = EXECUTIONBYDATE;
 exports.LOG = LOG;
