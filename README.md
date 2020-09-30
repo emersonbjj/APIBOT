@@ -2,34 +2,52 @@
 API desenvolvida para ser consumida pelo chatbot,
 sua função é expor registros do banco de dados da BluPrism On Premises que fica registrado todos os logs de automações, bem como também é a sua função executar automações aparti de comandos via bat para o software AutomateC.exe.
 
-[![Build Status](https://img.shields.io/badge/API-Est%C3%A1vel-green)]()
-[![Version](https://img.shields.io/badge/Vers%C3%A3o-1.0.1-yellow)]()
-[![MSSQL](https://img.shields.io/badge/MMSQL-2019-blue)]()
-[![Private Mode](https://img.shields.io/badge/Projeto-Private-red)]()
-
+![Build Status](https://img.shields.io/badge/API-Est%C3%A1vel-green)
+![Version](https://img.shields.io/badge/Vers%C3%A3o-2.0.0-yellow)
+![MSSQL](https://img.shields.io/badge/MMSQL-2019-blue)
+![Private Mode](https://img.shields.io/badge/Projeto-Private-red)
 
 ## Sumário
+
+* [Begin](#Begin)
+* [Tecnologias](#Tecnologias)
 * [Requests](#Requests)
 * [Rotas](#Rotas)
 * [Pendências](#Pendências)
-* [Tecnologias](#Tecnologias)
+
+
+## Begin
+
+Faça Download do projeto através do comando ` git clone https://github.com/emersonbjj/APIBOT.git`
+Após fazer o donwload instale todas as dependências necessárias. 
+
+```
+1º npm install 
+2º npm install express 
+3º npm install mssql 
+4º npm install git 
+5º npm install dotenv
+ ```
+
+## Tecnologias 
+
+* [SQL](https://docs.microsoft.com/pt-br/sql/sql-server/?view=sql-server-2017)
+* [JavaScript](https://nodejs.org/pt-br/docs/)
+* [PowerShell](https://docs.microsoft.com/en-us/powershell/)
 
 
 ## Requests
+- [X] Main.
 - [X] Get all process.
-- [X] Get only one processe by name.
+- [X] Get only one process by name.
 - [X] Get user by id.
-- [X] Post Insert user log.
 - [X] Get execution by date.
-- [X] Get main.
+- [X] Post Insert user log.
 - [X] Post Execute Process.
 
 
 ## Pendências
 - [X] Refatorar CODE.
-- [-] Notificar em caso de falha de schedule
-- [-] Padronizar todos os request com consulta.
-- [-] Adicionar validações ao Execute Process sobre a execução.
 
 ## Rotas
 
@@ -46,7 +64,7 @@ sua função é expor registros do banco de dados da BluPrism On Premises que fi
 `{Name: ID,   Type: Integer.Name: Nome, Type: String.Name: Setor,Type: String.Name: Str, Type: Date.}`
 - Exemplo de Requisição: 
 ```
-   const settings = {
+  const settings = {
   "async": true,
   "crossDomain": true,
   "url": "http://localhost:4200/log",
@@ -132,6 +150,3 @@ $.ajax(settings).done(function (response) {
 });
 ```
 
-## Tecnologias
-* [X] NODEJS.
-* [X] MSSQL.
