@@ -18,13 +18,13 @@ const PORTSERV = process.env.PORT
 //CHAMANDO ROTA PRINCIPAL
 app.use('/', MAIN);
 //GET ALL PROCESS
-app.get('/processos', GETPROCESS);
+app.get('/process', GETPROCESS);
 //GET EXECUTION BY DATE
-app.get('/processos/execution/:dt?:setor?', EXECUTIONBYDATE);
+app.get('/process/execution/:dt?:setor?', EXECUTIONBYDATE);
 //GET USER
 app.get('/log/:id?', GETUSER)
 //GET PROCESS BY NAME
-app.get('/processos/:name?', GETPROCESSBYNAME)
+app.get('/process/:name?', GETPROCESSBYNAME)
 //INSERT LOG IN BASE
 app.post('/log', LOG)
 //CREATE FILE .BAT AND EXECUTE PROCESS

@@ -4,8 +4,7 @@
   "description": "This API is responsible for comunication between Local database and IBM Cloud",
   "main": "index.js",
   "scripts": {
-    "test": "echo \"Error: no test specified\" && exit 1",
-    "go": "node index.js"
+    "test": "node index.js"
   },
   "author": "Emerson Ferreira",
   "license": "ISC",
