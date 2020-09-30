@@ -1,3 +1,2 @@
 node_modules/
-.gitignore
-**/Files_Executions
+Files_Executions/
