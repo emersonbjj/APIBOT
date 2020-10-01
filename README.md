@@ -53,8 +53,6 @@ Após fazer o donwload instale todas as dependências necessárias.
 
 #### Rota: '/', 
 - Descriptions: Fica a nossa pagina principal, não apresenta nenhum conteudo.
--Exemplo de Requisição:
-``
 
 #### Rota: '/log', 
 - Descriptions: Responsável pela inserção de logs no banco de dados 
@@ -88,7 +86,7 @@ $.ajax(settings).done(function (response) {
 - Method:GET,
 - Request: Nothing,
 - Param:`{Nothing}`
--Exemplo de Requisição:
+- Exemplo de Requisição:
 ```
 const settings = {
   "async": true,
@@ -107,7 +105,7 @@ $.ajax(settings).done(function (response) {
 - Method: POST,
 - Request: Query,
 - Param: `{Name: Process, Type: String. Name: Resource,  Type:String.}`
--Exemplo de Requisição:
+- Exemplo de Requisição:
 ```
 const settings = {
   "async": true,
@@ -132,7 +130,7 @@ $.ajax(settings).done(function (response) {
 - Method: GET,
 - Request: Query,
 - Param: `{Name: Dt, Type: String. Name: Setor,Type: String.}`
--Exemplo de Requisição:
+- Exemplo de Requisição:
 ```
 const settings = {
   "async": true,
