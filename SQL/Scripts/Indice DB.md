@@ -52,4 +52,5 @@ O script é responsável por criar a tabela de usuários que iram ter os privile
 
 O script é responsável por inserir novos registros na tabela auxiliar.
 Por Default ele adicionará um usuário administrador
-
+_________________
+## Querys

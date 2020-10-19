@@ -1,3 +1,7 @@
+//Esse arquivo é responsável por executar um arquivo do tipo .BAT, recebemdp seu caminho como parâmetro (path)
+//O retorno dele é um JSON 
+
+
 const { spawn } = require('child_process');
 module.exports = {
     ExecutionProcess(path) {

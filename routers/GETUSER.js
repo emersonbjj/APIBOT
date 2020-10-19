@@ -1,3 +1,4 @@
+//Este arquivo é responsável por retornar usuário passando o ID dele como parâmetros 
 var express = require('express'),
     router = express.Router();
 const Querys = require('../SQL/Querys');

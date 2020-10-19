@@ -1,3 +1,5 @@
+//Este arquivo é responsável por executar uma query que é passada pelo parâmetro CommandSql
+
 const sql = require('mssql');
 const Config = require('../SQL/Config')
 //Conecta ao banco de Dados.
@@ -5,9 +7,9 @@ sql.connect(Config.module)
     .then(conn => global.conn = conn)
     .catch(err => console.log(err));
 
-function SQLQuery(sqlQry, res) {
+function SQLQuery(CommandSql, res) {
     global.conn.request()
-        .query(sqlQry)
+        .query(CommandSql)
         .then(result => {
             console.log("[Database] Query está sendo executada")
             res.json(result.recordset)

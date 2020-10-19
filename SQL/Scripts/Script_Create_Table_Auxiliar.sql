@@ -4,8 +4,8 @@ IF NOT EXISTS (
 FROM
    sys.tables
 WHERE
-      [name] = 'Auxiliar_RPA'
-) CREATE TABLE Auxiliar_RPA
+      [name] = 'Auxiliar'
+) CREATE TABLE Auxiliar
 (
    ID integer  IDENTITY(1,1) PRIMARY KEY NOT NULL,
    QueueIdent integer NOT NULL,

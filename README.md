@@ -14,11 +14,12 @@ sua função é expor registros do banco de dados da BluPrism On Premises que fi
 * [Requests](#Requests)
 * [Rotas](#Rotas)
 * [Pendências](#Pendências)
+* [DataBase](https://github.com/emersonbjj/APIBOT/blob/master/SQL/Scripts/Indice%20DB.md)
 
 
 ## Begin
 
-Faça Download do projeto através do comando ` git clone https://github.com/emersonbjj/APIBOT.git`
+Faça Download do projeto através do comando ` GIT AQUI`
 Após fazer o donwload instale todas as dependências necessárias. 
 
 ```
@@ -28,7 +29,8 @@ Após fazer o donwload instale todas as dependências necessárias.
 4º npm install git 
 5º npm install dotenv
  ```
-
+Após instalar todas as dependencias para iniciar o servidor execute:
+`node index.js` ao termino do comando de execução você deverá receber a seguinte mensagem: "API executando pela porta: 4200"
 ## Tecnologias 
 
 * [SQL](https://docs.microsoft.com/pt-br/sql/sql-server/?view=sql-server-2017)
