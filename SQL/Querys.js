@@ -8,9 +8,9 @@ function GETUSERBYID(id) {
         try {
             const USER = `SELECT * FROM [BOT].[dbo].[Logon] WHERE [id] = '${id}'`
             console.log(`[Database] Consulta [GETUSERBYID] recebeu os seguintes parâmetros: ${id}`)
-            resolve(USER)
+            resolve(USER) //Aqui ele retorna a consulta a ser executada caso aconteça tudo bem
         } catch {
-            reject("[Database] Algo deu erro ao realizar a consulta")
+            reject("[Database] Algo deu erro ao realizar a consulta")//Aqui ele retorna a mensagem de erro a ser enviada em formato JSON
         }
     });
 }
@@ -27,9 +27,9 @@ function EXECUTIONBYDATE(dt, setor) {
              INNER JOIN [blueprism65-prd].[dbo].BPAStatus AS ST ON S.statusid = ST.statusid 
              WHERE FORMAT(DATEADD(hour,-3,[startdatetime]),'dd/MM/yyyy') = '${dt}' AND P.name like '%${setor}%'`
             console.log(`[Database] Consulta [EXECUTIONBYDATE] recebeu os seguintes parâmetros: ${dt},${setor}`);
-            resolve(EXECUTIONBYDATE)
+            resolve(EXECUTIONBYDATE) //Aqui ele retorna a consulta a ser executada caso aconteça tudo bem
         } catch {
-            reject("[Database] Algo deu erro ao realizar a consulta")
+            reject("[Database] Algo deu erro ao realizar a consulta")//Aqui ele retorna a mensagem de erro a ser enviada em formato JSON
         }
     });
 }
@@ -39,9 +39,9 @@ function LOG(id, Nome, Setor, str) {
         try {
             const LOG = `INSERT INTO [BOT].[dbo].[LOGBOT](id, nome, setor, time) VALUES(${id},'${Nome}','${Setor}','${str}')`
             console.log(`[Database] Insert [LOG] recebeu os seguintes parâmetros: ${id},${Nome},${Setor},${str}`)
-            resolve(LOG)
+            resolve(LOG)//Aqui ele retorna a consulta a ser executada caso aconteça tudo bem
         } catch {
-            reject("[Database] Algo deu erro ao inserir o log")
+            reject("[Database] Algo deu erro ao inserir o log")//Aqui ele retorna a mensagem de erro a ser enviada em formato JSON
         }
     });
 }
@@ -51,9 +51,9 @@ function SPProcess() {
         try {
             const SPProcess = `SELECT [Name] FROM [blueprism65-prd].[dbo].[BPAProcess]`
             console.log(`[Database] Consulta [LOG] não recebe parâmetros`)
-            resolve(SPProcess)
+            resolve(SPProcess)//Aqui ele retorna a consulta a ser executada caso aconteça tudo bem
         } catch {
-            reject("[Database] Algo deu erro ao realizar a consulta")
+            reject("[Database] Algo deu erro ao realizar a consulta")//Aqui ele retorna a mensagem de erro a ser enviada em formato JSON
         }
     });
 }
@@ -64,9 +64,9 @@ function SWProcess(Name) {
         try {
             const SWProcess = `SELECT [Name] FROM [blueprism65-prd].[dbo].[BPAProcess] WHERE [ProcessType] = 'P' AND [Name] like '%${Name}%'`
             console.log(`[Database] Consulta [Process by name] recebeu o seguinte parâmetro: ${Name}`)
-            resolve(SWProcess)
+            resolve(SWProcess)//Aqui ele retorna a consulta a ser executada caso aconteça tudo bem
         } catch {
-            reject("[Database] Algo deu erro ao realizar a consulta")
+            reject("[Database] Algo deu erro ao realizar a consulta")//Aqui ele retorna a mensagem de erro a ser enviada em formato JSON
         }
     });
 }

@@ -22,12 +22,7 @@
     "type": "git",
     "url": "git+https://github.com/emersonbjj/APIBOT.git"
   },
-  "keywords": [
-    "API",
-    "BOT",
-    "BIA",
-    "REST"
-  ],
+  "keywords": [],
   "bugs": {
     "url": "https://github.com/emersonbjj/APIBOT/issues"
   },

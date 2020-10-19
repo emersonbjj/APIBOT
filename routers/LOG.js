@@ -3,33 +3,26 @@ var express = require('express'), router = express.Router();
 const sql = require('mssql');
 const Querys = require('../SQL/Querys');
 const Config = require('../SQL/Config')
+const ExecuteQuery = require('../SQL/Execute Query')
 //Conecta ao banco de Dados.
-sql.connect(Config.module)
-    .then(conn => global.conn = conn)
-    .catch(err => console.log(err));
-//Executa Query
-function SQLQuery(sqlQry, res) {
-    global.conn.request()
-        .query(sqlQry)
-        .then(result => {
-            res.json(result.recordset)
-            console.log(result.recordset)
-        })
-        .catch(err => res.json(err));
-}
+
 router
     .post('/log', (req, res) => {
-        //Monta Data time para dar insert no banco
+        //Captura o parâmetros e armazena em variaveis
         const id = parseInt(req.body.id);
         const Nome = req.body.nome;
         const Setor = req.body.setor;
+        //Monta Data time para dar insert no banco
         const now = new Date();
         const offsetMs = now.getTimezoneOffset() * 60 * 1000;
         const dateLocal = new Date(now.getTime() - offsetMs);
-        const str = dateLocal.toISOString().slice(0, 19).replace(/-/g, "/").replace("T", " ");
+        const Time = dateLocal.toISOString().slice(0, 19).replace(/-/g, "/").replace("T", " ");
+        //Fim Monta Data time para dar insert no banco
+        Querys.LOG(id, Nome, Setor, Time)
+            .then(resolve => ExecuteQuery(resolve, res))
+            .catch(reject => json.res({
+                message: reject
+            }));
 
-        Querys.LOG(id, Nome, Setor, str)
-            .then(resolve => SQLQuery(resolve, res.json({ message: "LOG inserido" })))
-            .catch(reject => res.json({ message: reject }))
     })
 module.exports = router;
