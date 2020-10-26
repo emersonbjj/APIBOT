@@ -1,10 +1,8 @@
 //Esse arquivo é reponsável por inserir logs no banco de dados.
 var express = require('express'), router = express.Router();
-const sql = require('mssql');
-const Querys = require('../SQL/Querys');
-const Config = require('../SQL/Config')
-const ExecuteQuery = require('../SQL/Execute Query')
-//Conecta ao banco de Dados.
+const Querys = require('../SQL/Querys');//Importa as querys para uso
+const ExecuteQuery = require('../SQL/Execute Query')//Importa o modulo de excução de querys
+
 
 router
     .post('/log', (req, res) => {
@@ -18,10 +16,10 @@ router
         const dateLocal = new Date(now.getTime() - offsetMs);
         const Time = dateLocal.toISOString().slice(0, 19).replace(/-/g, "/").replace("T", " ");
         //Fim Monta Data time para dar insert no banco
-        Querys.LOG(id, Nome, Setor, Time)
-            .then(resolve => ExecuteQuery(resolve, res))
+        Querys.LOG(id, Nome, Setor, Time)//Aqui ele passa paramêtros para criação da query completa
+            .then(resolve => ExecuteQuery(resolve, res)) //Aqui ele executa a query montada acima
             .catch(reject => json.res({
-                message: reject
+                message: reject //Aqui ele retorna se algo der errado
             }));
 
     })

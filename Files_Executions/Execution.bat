@@ -1,1 +1,0 @@
-cd C:/Program Files/Blue Prism Limited/Blue Prism Automate/AutomateC.exe /run BSA_BR_RPA_TESTE01 /resource BACKOFFICE-EMER /user admin Ee!41526388 /dbconname Blueprism

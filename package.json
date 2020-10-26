@@ -12,19 +12,17 @@
     "body-parser": "^1.19.0",
     "dotenv": "^8.2.0",
     "express": "^4.17.1",
-    "git": "^0.1.5",
-    "moment": "^2.27.0",
     "mssql": "^6.2.3",
     "npm-git-install": "^0.3.0"
   },
   "devDependencies": {},
   "repository": {
     "type": "git",
-    "url": "git+https://github.com/emersonbjj/APIBOT.git"
+    "url": ""
   },
   "keywords": [],
   "bugs": {
-    "url": "https://github.com/emersonbjj/APIBOT/issues"
+    "url": "GIT + https://github.com/emersonbjj/APIBOT.git"
   },
-  "homepage": "https://github.com/emersonbjj/APIBOT#readme"
+  "homepage": ""
 }

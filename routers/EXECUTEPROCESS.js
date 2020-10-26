@@ -4,12 +4,12 @@
 require('dotenv').config();
 var express = require('express'),
    router = express.Router();
-const SaveFile = require('../SaveFile')
-const execution = require('../SQL/ExecuteProcess')
+const SaveFile = require('../SaveFile')//importa o modulo responsável por criar o arquivo .BAT
+const execution = require('../SQL/ExecuteProcess')//importa o modulo responsável por executar um aquivo no CMD
 router
    .post('/execution', (req, res) => {
-      const processName = req.query.process;
-      const resource = req.query.resource;
+      const processName = req.query.process;//Aqui ele captura o parametro nome do processo
+      const resource = req.query.resource;//Aqui ele captura o parametro nome do recurso
       SaveFile.savebat(processName, resource)
          .then(resolve => {
             console.log("[Process] O arquivo foi criado com sucesso")
