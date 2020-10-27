@@ -1,6 +1,8 @@
 //CABEÇALHO
 const express = require('express');
 const app = express();
+const chalk = require('chalk');
+const AP = require('./Apresentation')
 var bodyParser = require('body-parser');
 app.use(bodyParser.urlencoded({ extended: true }));
 app.use(bodyParser.json())
@@ -28,7 +30,8 @@ app.get('/process/:name?', GETPROCESSBYNAME)
 //INSERT LOG IN BASE
 app.post('/log', LOG)
 //CREATE FILE .BAT AND EXECUTE PROCESS
-app.post('/execution', EXECUTEPROCESS)
+app.post('/execution/:process?:resource?', EXECUTEPROCESS)
 //INICIAR O SERVIDOR
 app.listen(PORTSERV);
-console.log(`API executando pela porta: ${PORTSERV}`);
+AP
+console.log("API executando pela porta: " + chalk.yellow(PORTSERV));
