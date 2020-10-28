@@ -8,7 +8,7 @@ module.exports = {
         const bat = spawn('cmd.exe', ['/c', path]);//Aqui ele executa o arquivo .bat no CMD
         return new Promise((resolveExecution, rejectExecution) => {
             try {
-                console.log("-------------------INICIO DA EXECUÇÃO-----------------------")
+                WriteFileLog.SaveLog("-------------------INICIO DA EXECUÇÃO-----------------------")
                 var codefinal
                 bat.stdout.on('data', (data) => {
                  //   console.log(data.toString());

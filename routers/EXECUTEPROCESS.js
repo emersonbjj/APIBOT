@@ -15,19 +15,17 @@ router
       const resource = req.query.resource;//Aqui ele captura o parametro nome do recurso
       SaveFile.savebat(processName, resource)
          .then(resolve => {
-            console.log(chalk.green(Time + " [Process] ") + " O arquivo foi criado com sucesso")
+            WriteFileLog.SaveLog("[Process] O arquivo foi criado com sucesso")
             execution.ExecutionProcess(resolve)
                .then(resolveExecution => {
                   res.json(resolveExecution)
-                  console.log(chalk.green(Time + " [Process] ") + " O processo foi inicializado com sucesso.")
-                  WriteFileLog.SaveLog(Time + " [Process] O processo foi inicializado com sucesso.\r\n")
-                  console.log("-------------------FIM DA EXECUÇÃO-----------------------")
+                  WriteFileLog.SaveLog("[Process] O processo foi inicializado com sucesso.")
+                  WriteFileLog.SaveLog("-------------------FIM DA EXECUÇÃO-----------------------")
                })
                .catch(rejectExecution => {
                   res.json(rejectExecution)
-                  console.log(chalk.green(Time + " [Process] ") + "Ocorreu um erro ao executar o processo.")
-                  WriteFileLog.SaveLog(Time + " [Process] Ocorreu um erro ao executar o processo.\r\n")
-                  console.log("-------------------FIM DA EXECUÇÃO-----------------------")
+                  WriteFileLog.SaveLog("[Process] Ocorreu um erro ao executar o processo.")
+                  WriteFileLog.SaveLog("-------------------FIM DA EXECUÇÃO-----------------------")
                })
          })
          .catch(rejects => res.json(rejects))
