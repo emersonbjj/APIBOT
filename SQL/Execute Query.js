@@ -11,9 +11,7 @@ function SQLQuery(CommandSql, res) { //Função que executa a consulta de fato
     global.conn.request()
         .query(CommandSql)//Aqui ele Recebe a query como parâmetro
         .then(result => {
-           
-           
-           
+        
             setTimeout(() => {
                 WriteFileLog.SaveLog("[Database] Query está sendo executada")
             }, 1000);

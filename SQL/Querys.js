@@ -11,11 +11,11 @@ function GETUSERBYID(id) {
             setTimeout(() => {
                 WriteFileLog.SaveLog("-------------------INICIO DA CONEXÃO COM O DB-----------------------");
             }, 1000);
-            WriteFileLog.SaveLog("[Database] Consulta [GETUSERID] recebeu os seguintes parâmetros:" + `${id}`)
+            WriteFileLog.SaveLog("[Request] Consulta [GETUSERID] recebeu os seguintes parâmetros:" + `${id}`)
             resolve(USER) //Aqui ele retorna a consulta a ser executada caso aconteça tudo bem
         } catch {
-            reject(chalk.green("[Database]") + " Algo deu erro ao realizar a consulta")//Aqui ele retorna a mensagem de erro a ser enviada em formato JSON
-            WriteFileLog.SaveLog("[Database] Algo deu erro ao realizar a consulta")
+            reject(chalk.green("[Request]") + " Algo deu erro ao realizar a consulta")//Aqui ele retorna a mensagem de erro a ser enviada em formato JSON
+            WriteFileLog.SaveLog("[Request] Algo deu erro ao realizar a consulta")
         }
     });
 }
@@ -34,11 +34,11 @@ function EXECUTIONBYDATE(dt, setor) {
             setTimeout(() => {
                 WriteFileLog.SaveLog("-------------------INICIO DA CONEXÃO COM O DB-----------------------");
             }, 1000);
-            WriteFileLog.SaveLog("[Database] Consulta [EXECUTIONBYDATE] recebeu os seguintes parâmetros: " + `${dt},${setor}`)
+            WriteFileLog.SaveLog("[Request] Consulta [EXECUTIONBYDATE] recebeu os seguintes parâmetros: " + chalk.yellow(`${dt},${setor}`))
             resolve(EXECUTIONBYDATE) //Aqui ele retorna a consulta a ser executada caso aconteça tudo bem
         } catch {
-            reject("[Database] Algo deu erro ao realizar a consulta")//Aqui ele retorna a mensagem de erro a ser enviada em formato JSON
-            WriteFileLog.SaveLog("[Database] Algo deu erro ao realizar a consulta")
+            reject("[Request] Algo deu erro ao realizar a consulta")//Aqui ele retorna a mensagem de erro a ser enviada em formato JSON
+            WriteFileLog.SaveLog("[Request] Algo deu erro ao realizar a consulta")
         }
     });
 }
@@ -50,11 +50,11 @@ function LOG(id, Nome, Setor, str) {
             setTimeout(() => {
                 WriteFileLog.SaveLog("-------------------INICIO DA CONEXÃO COM O DB-----------------------");
             }, 1000);
-            WriteFileLog.SaveLog("[Database] Consulta [LOG] recebeu os seguintes parâmetros: " + `${id},${Nome},${Setor},${str}`)
+            WriteFileLog.SaveLog("[Request] Consulta [LOG] recebeu os seguintes parâmetros: " + chalk.yellow(`${id},${Nome},${Setor},${str}`))
             resolve(LOG)//Aqui ele retorna a consulta a ser executada caso aconteça tudo bem
         } catch {
-            reject("[Database] Algo deu erro ao inserir o log")//Aqui ele retorna a mensagem de erro a ser enviada em formato JSON
-            WriteFileLog.SaveLog("[Database] Algo deu erro ao realizar a consulta")
+            reject("[Request] Algo deu erro ao inserir o log")//Aqui ele retorna a mensagem de erro a ser enviada em formato JSON
+            WriteFileLog.SaveLog("[Request] Algo deu erro ao realizar a consulta")
         }
     });
 }
@@ -66,11 +66,11 @@ function SPProcess() {
             setTimeout(() => {
                 WriteFileLog.SaveLog("-------------------INICIO DA CONEXÃO COM O DB-----------------------");
             }, 1000);
-            WriteFileLog.SaveLog("[Database] consulta [GETALLPROCESS] não recebe parâmetros.")
+            WriteFileLog.SaveLog("[Request] consulta [GETALLPROCESS] não recebe parâmetros.")
             resolve(SPProcess)//Aqui ele retorna a consulta a ser executada caso aconteça tudo bem
         } catch {
-            reject("[Database] Algo deu erro ao realizar a consulta")//Aqui ele retorna a mensagem de erro a ser enviada em formato JSON
-            WriteFileLog.SaveLog("[Database] Algo deu erro ao realizar a consulta")
+            reject("[Request] Algo deu erro ao realizar a consulta")//Aqui ele retorna a mensagem de erro a ser enviada em formato JSON
+            WriteFileLog.SaveLog("[Request] Algo deu erro ao realizar a consulta")
         }
     });
 }
@@ -83,11 +83,11 @@ function SWProcess(Name) {
             setTimeout(() => {
                 WriteFileLog.SaveLog("-------------------INICIO DA CONEXÃO COM O DB-----------------------");
             }, 1000);
-            WriteFileLog.SaveLog("[Database] Consulta [PROCESS BY NAME] recebeu os seguintes parâmetros: " + `${Name}`)
+            WriteFileLog.SaveLog("[Request] Consulta [PROCESS BY NAME] recebeu os seguintes parâmetros: " + chalk.yellow(`${Name}`))
             resolve(SWProcess)//Aqui ele retorna a consulta a ser executada caso aconteça tudo bem
         } catch {
-            reject("[Database] Algo deu erro ao realizar a consulta")//Aqui ele retorna a mensagem de erro a ser enviada em formato JSON
-            WriteFileLog.SaveLog("[Database] Algo deu erro ao realizar a consulta")
+            reject("[Request] Algo deu erro ao realizar a consulta")//Aqui ele retorna a mensagem de erro a ser enviada em formato JSON
+            WriteFileLog.SaveLog("[Request] Algo deu erro ao realizar a consulta")
         }
     });
 }

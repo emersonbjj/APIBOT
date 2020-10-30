@@ -28,6 +28,8 @@ Após fazer o donwload instale todas as dependências necessárias.
 3º npm install mssql 
 4º npm install git 
 5º npm install dotenv
+6º npm install chalk
+
  ```
 Após instalar todas as dependencias para iniciar o servidor execute:
 `node index.js` ao termino do comando de execução você deverá receber a seguinte mensagem: "API executando pela porta: 4200"

@@ -3,6 +3,7 @@ const { resolve } = require('path');
 const { rejects } = require('assert');
 const { error } = require('console');
 const WriteFileLog = require('./Savelog')
+const chalk = require('chalk');
 
 module.exports = {
     savebat(processName, resource) {
@@ -16,7 +17,7 @@ module.exports = {
                     + `start AutomateC.exe /run ${processName} /resource ${resource} /user ${Username} ${Userpassword} /dbconname ${dbconname}`;
                 const PathRelative = `U:/APIBOT/Files_Executions/${processName}.bat`;
                 fs.writeFileSync(PathRelative, contentString)
-                WriteFileLog.SaveLog(`[Process] O arquivo foi gravado com esses parâmetros: Process name: ${processName} Resource name: ${resource}`)
+                WriteFileLog.SaveLog(`[Process] O arquivo foi gravado com esses parâmetros: Process name: ` + chalk.yellow(`${processName}`) + ' Resource name: ' + chalk.yellow(`${resource}`))
                 resolve(PathRelative);
             }
             catch

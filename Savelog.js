@@ -8,7 +8,7 @@ const DataAtual = date.toLocaleDateString('pt-br', { dateStyle: 'short' });
 function SaveLog(Content) {
 
     try {
-        const PathFolderLog = `U:/APIBOT/Logs/LOG_${DataAtual}.TXT`
+        const PathFolderLog = `./Logs/LOG_${DataAtual}.TXT`
 
         FileExist(PathFolderLog)
             .then(resolvePath => {
@@ -26,8 +26,8 @@ function SaveLog(Content) {
             })
             .catch(() => {
                 var DateTime = new Date()
-                var Time = DateTime.toLocaleDateString('pt-br', { timeStyle: 'full' });                fs.writeFileSync(PathFolderLog, Time + Content)
-                var NewString =  Content + "\r\n"
+                var Time = DateTime.toLocaleDateString('pt-br', { timeStyle: 'full' });
+                var NewString = Content + "\r\n"
                 fs.writeFileSync(PathFolderLog, NewString)
                 console.log(chalk.green("[LOG]") + " Um novo arquivo de Log foi registrado com sucesso")
                 console.log(chalk.green(Time) + Content)
@@ -60,7 +60,6 @@ function FileExist(FilePath) {
             }
         } catch {
             rejects(chalk.red("[FATAL]") + " Erro ao buscar arquivo")
-
         }
 
     });
